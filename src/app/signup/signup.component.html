@@ -1,3 +1,15 @@
-<p>
-  signup works!
-</p>
+<div class="form-container">
+    <a routerLink="/login" id="goback">Go back</a>
+    
+    <h2>Join Now</h2>
+    
+    <span class="error" *ngIf="error" [@fallIn]="state">{{ error }}</span>
+    
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+        <input type="email" name="email" (ngModel)="email" class="txt" required/>
+        <input type="password" name="password" (ngModel)="password" class="txt" required/>
+        <button type="submit" [disabled]="!formData.valid" class="basic-btn">
+            Create my account
+        </button>
+    </form>
+</div>

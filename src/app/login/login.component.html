@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="form-container">
+    <img src="https://coursetro.com/preview/angular-auth-demo/assets/images/lock.svg" id="lock"/>
+    <span class="error" *ngIf="error">{{ error }}</span>
+    
+    <!--<a routerLink="/login-email" id="email">Login with Email</a>-->
+    
+    <button (click)="login()" id="email">Login with Email</button>
+    <button (click)="loginGG()" id="google">Login with Google</button>
+    <button (click)="loginFB()" id="facebook">Login with Facebook</button>
+    
+    <a routerLink="/signup" routerLinkActive="active" class="alc">
+        No Account ? <strong>Create one here</strong>
+    </a>
+</div>
